@@ -1,0 +1,85 @@
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.navbar-light {
+  background-color: #ff9800;
+}
+
+.navbar-brand {
+  float:none;
+  font-size: 35px;
+}
+
+.verticalLine {
+  border-left: thick solid #ff9800;
+}
+
+.caso2 {
+  padding-left: 100px;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #ff9800;
+   color: white;
+   text-align: center;
+   height: 70px;
+}
+
+.paso2 {
+  display: none;
+	margin: 20px auto;
+	max-width: 600px;
+}
+
+.square{
+  width:48%;
+  height:200px;
+  margin:4px;
+  border:1px
+  solid black;
+  float: left
+}
+
+.cuadrante1{
+  background-color: #2196F3;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 65;
+  cursor: pointer;
+}
+
+.cuadrante2{
+  background-color: #673AB7;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 65;
+  cursor: pointer;
+}
+
+.cuadrante3{
+  background-color: #F44336;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 65;
+  cursor: pointer;
+}
+
+.cuadrante4{
+  background-color: #009688;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 65;
+  cursor: pointer;
+}
