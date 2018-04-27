@@ -37,6 +37,16 @@
   display: none;
 	margin: 20px auto;
 	max-width: 600px;
+  padding-top: 100px;
+}
+
+.paso3 {
+  display: none;
+  padding-top: 100px;
+}
+
+.contenedor-3{
+  padding-left: 170px;
 }
 
 .square{
@@ -82,4 +92,13 @@
   text-align: center;
   padding-top: 65;
   cursor: pointer;
+}
+
+.form {
+  padding-top: 100px;
+}
+
+#result{
+  display: none;
+  padding-top: 100px;
 }

@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="file:///home/ricardo/Documents/front-projects/cncpoints-calculator/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>cncpoints-calculator</title>
   </head>
   <body>
@@ -15,7 +14,7 @@
     <nav class="navbar navbar-light">
 
       <div class="navbar-header">
-        <a class="navbar-brand" style="color: white" href="file:///home/ricardo/Documents/front-projects/cncpoints-calculator/index.html">CNC POINTS CALCULATOR</a>
+        <a class="navbar-brand" style="color: white" href="index.html">CNC POINTS CALCULATOR</a>
       </div>
 
 
@@ -24,7 +23,7 @@
       <div class="row">
         <div class="caso1 col">
           <h3 style="padding-left: 140px">Caso 1</h3>
-          <input type="image" src="img/caso1.png" width="400" height="400">
+          <input type="image" src="img/caso1/caso1.png" width="400" height="400">
           <h4 style="padding-left: 70px">Diagonales y Verticales</h4>
         </div>
 
@@ -32,7 +31,7 @@
 
         <div class="caso2 col">
           <h3 style="padding-left: 140px">Caso 2</h3>
-          <input type="image" src="img/caso2.png" width="400" height="400">
+          <input type="image" src="img/caso2/caso2.png" width="400" height="400">
           <h4 style="padding-left: 60px">Diagonales y Horizontales</h4>
         </div>
       </div>
@@ -47,8 +46,30 @@
       <div class="cuadrante4 square">IV</div>
     </div>
 
+    <div class="paso3">
+      <h1 align="center" class="lastTitle"></h1>
+      <div class="container contenedor-3">
+        <div class="row">
+          <img class= "graph col-6" src=""> 
+          <form class="form col-6">
+            Alpha:<br>
+            <input type="number" name="alpha"><br>
+            Radius:<br>
+            <input type="number" name="radio"><br>
+            <input type="submit" value="Submit">
+            <input type="reset">
+          </form> 
+          <div id="result" class="col-6">
+            <h4 class="result1"></h4><br>
+            <h4 class="result2"></h4><br>
+            <h4 class="result3"></h4><br>
+            <h4 class="result4"></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="footer">
-      <p>Adryana Salazar Galvan</p>
     </div>
 
     <script src="javascript/logic.js"></script>
