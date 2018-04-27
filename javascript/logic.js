@@ -51,7 +51,7 @@ function showGraph(){
       $(".graph").attr("src", "img/caso1/cuadrante4.png")
 
     }
-  } 
+  }
   else {
     if (quadrant == 1) {
       $(".graph").attr("src", "img/caso2/cuadrante1.png")
@@ -71,27 +71,12 @@ function showGraph(){
 
 }
 
-class Formula {
-  constructor(radius, alpha) {
-    this.radius = radius;
-    this.alpha = alpha;
-  }
-
-  get resultado1(){
-    return this.radius * Math.cos(this.alpha);
-  }
-
-  get resultado2(){
-    return this.radius - this.resultado1;
-  }
-
-  get resultado3(){
-    return this.resultado2/Math.tan(this.alpha)
-  }
-
-  get resultado4(){
-    return (this.radius * Math.sin(this.alpha)) - this.resultado3;
-  }
+function Formula(alpha, radius) {
+  this.results = {};
+  this.results["result1"] = radius * Math.cos(alpha);
+  this.results["result2"] = radius - this.results["result1"];
+  this.results["result3"] = this.results["result2"]/Math.tan(alpha);
+  this.results["result4"] = (radius * Math.sin(alpha)) - this.results["result3"];
 }
 
 $('.form').submit(function() {
@@ -104,15 +89,14 @@ $('.form').submit(function() {
         values[this.name] = $(this).val();
     });
     var formula = new Formula(values["radio"], values["alpha"]);
-    console.log(values);
     console.log(formula);
     $('.form').hide();
 
     $('#result').show();
-    $(".result1").text("1: " + formula.resultado1);
-    $(".result2").text("2: " + formula.resultado2);
-    $(".result3").text("3: " + formula.resultado3);
-    $(".result4").text("4: " + formula.resultado4);
+    $(".result1").text("1: " + formula.results["result1"]);
+    $(".result2").text("2: " + formula.results["result2"]);
+    $(".result3").text("3: " + formula.results["result3"]);
+    $(".result4").text("4: " + formula.results["result4"]);
 
     return false;
 
