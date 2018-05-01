@@ -65,6 +65,8 @@
   text-align: center;
   padding-top: 65;
   cursor: pointer;
+  border-radius: 0px 200px 0px 0px;
+  width: 40%;
 }
 
 .cuadrante2{
@@ -74,6 +76,8 @@
   text-align: center;
   padding-top: 65;
   cursor: pointer;
+  border-radius: 200px 0px 0px 0px;
+  width: 40%;
 }
 
 .cuadrante3{
@@ -83,6 +87,8 @@
   text-align: center;
   padding-top: 65;
   cursor: pointer;
+  border-radius: 0px 0px 0px 200px;
+  width: 40%;
 }
 
 .cuadrante4{
@@ -92,13 +98,25 @@
   text-align: center;
   padding-top: 65;
   cursor: pointer;
+  border-radius: 0px 0px 200px 0px;
+  width: 40%;
 }
 
 .form {
-  padding-top: 100px;
+  padding-top: 20px;
 }
 
 #result{
   display: none;
-  padding-top: 100px;
+  padding-top: 30px;
 }
+
+.cuadrantes {
+  padding-left: 75px;
+}
+
+.table { 
+  width: 50%;
+  text-align: center;
+}
+

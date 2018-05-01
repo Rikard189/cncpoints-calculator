@@ -71,7 +71,71 @@ function showGraph(){
 
 }
 
-function Formula(alpha, radius) {
+
+function showResultGraph(results, values){
+  if (numeroCaso == 1) {
+    if (quadrant == 1) {
+      $(".graph").attr("src", "img/caso1/c1-result.png");
+      $(".x1").text(values["x-point"] - results["result2"]);
+      $(".y1").text(values["y-point"] + results["result3"]);
+      $(".x2").text(values["x-point"]);
+      $(".y2").text(values["y-point"] + results["result4"]);
+    } else if (quadrant == 2) {
+      $(".graph").attr("src", "img/caso1/c2-result.png");
+      $(".x1").text(values["x-point"] - results["result2"]);
+      $(".y1").text(values["y-point"] + results["result3"]);
+      $(".x2").text(values["x-point"]);
+      $(".y2").text(values["y-point"] + results["result4"]);
+
+    } else if (quadrant == 3) {
+      $(".graph").attr("src", "img/caso1/c3-result.png");
+      $(".x1").text(values["x-point"]);
+      $(".y1").text(values["y-point"] - results["result4"]);
+      $(".x2").text(values["x-point"] - results["result2"]);
+      $(".y2").text(values["y-point"] - results["result3"]);
+
+    } else {
+      $(".graph").attr("src", "img/caso1/c4-result.png");
+      $(".x1").text(values["x-point"]);
+      $(".y1").text(values["y-point"] - results["result4"]);
+      $(".x2").text(values["x-point"] - results["result2"]);
+      $(".y2").text(values["y-point"] + results["result3"]);
+
+    }
+  }
+  else {
+    if (quadrant == 1) {
+      $(".graph").attr("src", "img/caso2/c1-result.png");
+      $(".x1").text(values["x-point"] - results["result4"]);
+      $(".y1").text(values["y-point"]);
+      $(".x2").text(values["x-point"] - results["result3"]);
+      $(".y2").text(values["y-point"] - results["result2"]);
+
+    } else if (quadrant == 2) {
+      $(".graph").attr("src", "img/caso2/c2-result.png");
+      $(".x1").text(values["x-point"] - results["result4"]);
+      $(".y1").text(values["y-point"]);
+      $(".x2").text(values["x-point"] + results["result3"]);
+      $(".y2").text(values["y-point"] - results["result2"]);
+
+    } else if (quadrant == 3) {
+      $(".graph").attr("src", "img/caso2/c3-result.png");
+      $(".x1").text(values["x-point"] + results["result3"]);
+      $(".y1").text(values["y-point"] - results["result2"]);
+      $(".x2").text(values["x-point"] - results["result4"]);
+      $(".y2").text(values["y-point"]);
+
+    } else {
+      $(".graph").attr("src", "img/caso2/c4-result.png");
+      $(".x1").text(values["x-point"] - results["result4"]);
+      $(".y1").text(values["y-point"]);
+      $(".x2").text(values["x-point"] + results["result3"]);
+      $(".y2").text(values["y-point"] + results["result2"]);
+    }
+  }
+}
+
+function Formula(alpha, radius, x, y) {
   this.results = {};
   this.results["result1"] = radius * Math.cos(alpha);
   this.results["result2"] = radius - this.results["result1"];
@@ -80,11 +144,9 @@ function Formula(alpha, radius) {
 }
 
 $('.form').submit(function() {
-    // get all the inputs into an array.
+
     var $inputs = $('.form :input');
 
-    // not sure if you wanted this, but I thought I'd add it.
-    // get an associative array of just the values.
     $inputs.each(function() {
         values[this.name] = $(this).val();
     });
@@ -93,10 +155,19 @@ $('.form').submit(function() {
     $('.form').hide();
 
     $('#result').show();
-    $(".result1").text("1: " + formula.results["result1"]);
-    $(".result2").text("2: " + formula.results["result2"]);
-    $(".result3").text("3: " + formula.results["result3"]);
-    $(".result4").text("4: " + formula.results["result4"]);
+
+    showResultGraph(formula.results, values);
+
+
+    $(".result1").text("1: " + formula.results["result1"].toFixed(4));
+    $(".result2").text("2: " + formula.results["result2"].toFixed(4));
+    $(".result3").text("3: " + formula.results["result3"].toFixed(4));
+    $(".result4").text("4: " + formula.results["result4"].toFixed(4));
+
+    $(".x1").text(parseFloat($(".x1").text()).toFixed(4));
+    $(".x2").text(parseFloat($(".x2").text()).toFixed(4));
+    $(".y1").text(parseFloat($(".y1").text()).toFixed(4));
+    $(".y2").text(parseFloat($(".y2").text()).toFixed(4));
 
     return false;
 
