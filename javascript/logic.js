@@ -137,10 +137,10 @@ function showResultGraph(results, values){
 
 function Formula(alpha, radius, x, y) {
   this.results = {};
-  this.results["result1"] = radius * Math.cos(alpha);
+  this.results["result1"] = radius * cosDegrees(alpha);
   this.results["result2"] = radius - this.results["result1"];
-  this.results["result3"] = this.results["result2"]/Math.tan(alpha);
-  this.results["result4"] = (radius * Math.sin(alpha)) - this.results["result3"];
+  this.results["result3"] = this.results["result2"]/tanDegrees(alpha);
+  this.results["result4"] = (radius * sinDegrees(alpha)) - this.results["result3"];
 }
 
 $('.form').submit(function() {
@@ -150,7 +150,7 @@ $('.form').submit(function() {
     $inputs.each(function() {
         values[this.name] = $(this).val();
     });
-    var formula = new Formula(values["radio"], values["alpha"]);
+    var formula = new Formula(values["alpha"], values["radio"]);
     console.log(formula);
     $('.form').hide();
 
@@ -172,3 +172,7 @@ $('.form').submit(function() {
     return false;
 
 });
+
+function cosDegrees(angle) {return Math.cos(angle/180*Math.PI);};
+function sinDegrees(angle) {return Math.sin(angle/180*Math.PI);};
+function tanDegrees(angle) {return Math.tan(angle/180*Math.PI);};
